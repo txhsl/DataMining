@@ -10,6 +10,9 @@ from sklearn import metrics
 
 from q1 import knn,input
 
+import warnings
+warnings.filterwarnings("ignore")
+
 def best_kmeans():
 
     # data input
@@ -62,7 +65,7 @@ def evaluate_gmm():
 
     # compare
     # DBSCAN and GMM
-    n_components = 8
+    n_components = 2
     result_gmm = gmm(n_components)
 
     main_cluster = np.argmax(np.bincount(result_gmm))
@@ -134,4 +137,4 @@ def validate(n):
 if __name__ == '__main__':
 
     evaluate_gmm()
-    validate(8)
+    validate(2)

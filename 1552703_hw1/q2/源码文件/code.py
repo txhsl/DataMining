@@ -79,7 +79,7 @@ if __name__ == '__main__':
 
     evaluate_KMeans()
 
-    validate(8)
+    validate(2)
 
     #for n in range(int(math.sqrt(data_shape[1])/2), int(math.sqrt(data_shape[1])/2) + 40)
     #   validate(n)
