@@ -20,7 +20,7 @@ def best_kmeans():
     data_array_transposed = data_array.transpose()
 
     # get the cluster labels
-    clusterer = KMeans(n_clusters=8, random_state=10)
+    clusterer = KMeans(n_clusters=2, random_state=10)
     cluster_labels = clusterer.fit_predict(data_array_transposed)
 
     return cluster_labels

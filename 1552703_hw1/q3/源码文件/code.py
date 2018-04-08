@@ -5,6 +5,7 @@ import math
 import matplotlib.pyplot as plt
 
 from sklearn.cluster import DBSCAN
+from sklearn.cluster import KMeans
 from sklearn import metrics
 from sklearn.metrics import silhouette_samples, silhouette_score
 
@@ -89,11 +90,45 @@ def validate(eps):
 
                 print''
 
+def best_kmeans():
+
+    # data input
+    data_array, data, data_shape = input()
+    data_array_transposed = data_array.transpose()
+
+    # get the cluster labels
+    clusterer = KMeans(n_clusters=2, random_state=10)
+    cluster_labels = clusterer.fit_predict(data_array_transposed)
+
+    print cluster_labels
+
+def best_dbscan():
+
+    # data input
+    data_array, data, data_shape = input()
+    data_transposed = data.transpose()
+
+    # get the cluster labels
+    db = DBSCAN(eps=310,min_samples=4)
+    clusterer = db.fit(data_transposed)
+    cluster_labels = clusterer.labels_
+
+    print cluster_labels
+
+def cmp_kmeans_dbscan():
+
+    print "Best K-Means:"
+    best_kmeans()
+    print "Best DBSCAN:"
+    best_dbscan()
+
 if __name__ == '__main__':
 
     evaluate_dbscan()
 
     validate(310)
+
+    cmp_kmeans_dbscan()
 
     #for eps in range(50,80):
     #    validate(eps)

@@ -1,2 +1,3 @@
 # DataMining
-homework1 code finished, paper undone.
+homework1 done.
+--The result is shit, or the data is shit.
